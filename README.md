@@ -366,11 +366,9 @@ flowchart TD
 
 ### Screenshot
 
-```markdown
 ![Halaman Items](docs/items.png)
 ![Halaman Customers](docs/customers.png)
 ![Halaman Transactions](docs/transactions.png)
-```
 
 ---
 
