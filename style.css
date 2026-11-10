@@ -1,0 +1,333 @@
+/* ============================================================================
+   FILE: style.css
+   DESKRIPSI: Styling GUI bertema Bak Truk Nusantara (Merah Marun & Kuning Kunyit)
+   ============================================================================ */
+
+/* Reset margin dan padding standar browser serta mengatur box-sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Pengaturan warna latar belakang halaman dan jenis font utama */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F8F5F0; /* Putih gading hangat agar nyaman dilihat */
+    color: #2C221E;           /* Warna teks gelap kontras tinggi */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Container utama di tengah layar dengan lebar maksimal 1150px */
+.app-container {
+    max-width: 1150px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 3px solid #8B1E1E; /* Bingkai merah marun khas lis bak truk */
+}
+
+/* Styling Header dengan gradasi merah marun dan garis bawah kuning kunyit */
+.truck-header {
+    background: linear-gradient(135deg, #7A1515 0%, #9E2424 100%);
+    color: #FFFFFF;
+    padding: 25px 30px 20px;
+    text-align: center;
+    border-bottom: 6px solid #F4B400; /* Garis kuning kunyit khas cat truk */
+}
+
+/* Pita suara toa truk di bagian atas judul */
+.header-badge {
+    display: inline-block;
+    background-color: #F4B400;
+    color: #4A1010;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Judul utama aplikasi di header */
+.truck-header h1 {
+    font-size: 1.9rem;
+    margin-bottom: 6px;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Sub-judul deskripsi sistem */
+.truck-header .subtitle {
+    font-size: 0.95rem;
+    color: #FFE8A3;
+    margin-bottom: 20px;
+}
+
+/* Baris menu navigasi di dalam header */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Tombol link navigasi standar */
+.nav-link {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 2px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Efek saat kursor diarahkan ke menu navigasi */
+.nav-link:hover {
+    background-color: rgba(244, 180, 0, 0.25);
+    border-color: #F4B400;
+}
+
+/* Tampilan tombol menu halaman yang sedang aktif dibuka */
+.nav-link.active {
+    background-color: #F4B400;
+    color: #5A0F0F;
+    border-color: #FFFFFF;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Area konten utama tempat form dan tabel berada */
+.main-content {
+    padding: 28px 30px;
+}
+
+/* Layout Grid 2 Kolom (Kiri: Form Input/Edit, Kanan: Tabel Data) */
+.content-grid {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+/* Responsif untuk layar kecil: ubah menjadi 1 kolom ke bawah */
+@media (max-width: 900px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Kotak Card untuk membungkus Form maupun Tabel */
+.card {
+    background-color: #FFFFFF;
+    border: 1px solid #E2D9C8;
+    border-top: 4px solid #8B1E1E;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Judul di dalam masing-masing Card */
+.card h2 {
+    font-size: 1.25rem;
+    color: #7A1515;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px dashed #F4B400;
+}
+
+/* Grup input di dalam Form */
+.form-group {
+    margin-bottom: 14px;
+}
+
+/* Label di atas input form */
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #3D2C26;
+}
+
+/* Styling untuk kotak input teks, angka, tanggal, dan dropdown select */
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1.5px solid #C9BBAE;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background-color: #FDFBF7;
+}
+
+/* Efek fokus saat user mengetik di dalam form */
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #8B1E1E;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(139, 30, 30, 0.12);
+}
+
+/* Tombol dasar (Button) */
+.btn {
+    display: inline-block;
+    padding: 9px 16px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Tombol Simpan / Tambah (Merah Marun Khas Truk) */
+.btn-primary {
+    background-color: #8B1E1E;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+/* Tombol Update / Edit (Kuning Kunyit) */
+.btn-warning {
+    background-color: #F4B400;
+    color: #3B1010;
+}
+
+/* Tombol Hapus / Delete (Merah Terang) */
+.btn-danger {
+    background-color: #D93025;
+    color: #FFFFFF;
+}
+
+/* Tombol Batal Edit (Abu-abu) */
+.btn-secondary {
+    background-color: #6C757D;
+    color: #FFFFFF;
+    width: 100%;
+    margin-top: 8px;
+}
+
+/* Ukuran tombol kecil khusus di dalam baris tabel aksi */
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    margin-right: 4px;
+}
+
+/* Pembungkus tabel agar bisa di-scroll horizontal jika layar sempit */
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Styling Tabel Data */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+}
+
+/* Header kolom tabel */
+table thead th {
+    background-color: #8B1E1E;
+    color: #FFFFFF;
+    text-align: left;
+    padding: 11px 12px;
+    border-bottom: 3px solid #F4B400;
+}
+
+/* Sel isi tabel */
+table tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #EAE2D6;
+    vertical-align: middle;
+}
+
+/* Warna zebra selang-seling pada baris tabel */
+table tbody tr:nth-child(even) {
+    background-color: #FAF6F0;
+}
+
+/* Efek sorot baris saat dilewati kursor */
+table tbody tr:hover {
+    background-color: #FFF3CD;
+}
+
+/* Kotak pesan notifikasi (Sukses / Gagal) */
+.alert {
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Notifikasi Sukses (Hijau) */
+.alert-success {
+    background-color: #D4EDDA;
+    color: #155724;
+    border-left: 5px solid #28A745;
+}
+
+/* Notifikasi Error / Peringatan RESTRICT (Merah Muda) */
+.alert-danger {
+    background-color: #F8D7DA;
+    color: #721C24;
+    border-left: 5px solid #DC3545;
+}
+
+/* Badge label kecil untuk kategori, stok, dan status tawar */
+.badge {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.badge-yellow {
+    background-color: #FFF0B3;
+    color: #7A5200;
+    border: 1px solid #F4B400;
+}
+
+.badge-green {
+    background-color: #D1F2EB;
+    color: #0E6251;
+}
+
+.badge-red {
+    background-color: #FADBD8;
+    color: #78281F;
+}
+
+/* Styling bagian Footer dengan kutipan pantun truk */
+.truck-footer {
+    background-color: #2C221E;
+    color: #F8F5F0;
+    text-align: center;
+    padding: 18px 20px;
+    border-top: 4px solid #F4B400;
+}
+
+.truck-footer .truck-quote {
+    font-style: italic;
+    color: #F4B400;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.truck-footer small {
+    color: #CFC6BC;
+    font-size: 0.8rem;
+}
